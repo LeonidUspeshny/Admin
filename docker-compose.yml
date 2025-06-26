@@ -4,7 +4,7 @@ services:
   app:
     build: .
     volumes:
-      - /home/leo/Admin:/app  # Монтируем локальную директорию в контейнер
-      - /home/leo/Admin/media/media:/app/media
+ # Монтируем локальную директорию в контейнер
+      - my_photos_volume:/app/media
     ports:
       - "9090:8000"  # Пример порта, измените по необходимости
