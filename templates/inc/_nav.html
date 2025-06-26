@@ -1,0 +1,44 @@
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand">Новости</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav" style="margin-left: 50px">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'Home' %}">Стартовая</a>
+        </li>
+        {% if request.user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'Add_news' %}">Добавить новость</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.llavka.ru">Лапушкина Лавка</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Services
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="http://79.98.142.114:8080">Jenkins</a></li>
+            <li><a class="dropdown-item" href="http://79.98.142.114:7070/phpmyadmin">PHP my Admin</a></li>
+            <li><a class="dropdown-item" href="http://79.98.142.114:9000/">llavka.ru test</a></li>
+            {% endif %}
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+   <span class="navbar-text" style="margin-right: 20px; display: flex;">
+     {% if request.user.is_authenticated %}
+     <span class="auth"style="display: flex;" >
+     Привет, {{ user.username }} | <a href="{% url 'Logout' %}">Выйти</a>
+     </span>
+     {% else %}
+     <span class="noauth" style="margin-right: 20px; display: flex;">
+       <a href="{% url 'Register' %}">Регистрация</a> | <a href="{% url 'Login' %}">Логин</a>
+     </span>
+     {% endif %}
+   </span>
+</nav>
