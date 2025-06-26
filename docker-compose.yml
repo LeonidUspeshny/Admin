@@ -2,9 +2,8 @@ services:
   app:
     image: adminka-app
     volumes:
-      - media_volume:/app/media 
+      # Монтируем папку с базой данных
+      - /home/leo/Admin:/app  # Путь на хосте: /home/leo/Admin
     ports:
       - "9090:8000"
     restart: always
-volumes:
-  media_volume:
