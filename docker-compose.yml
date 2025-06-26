@@ -1,12 +1,12 @@
-version: '3.8'
-
 services:
   app:
     image: adminka-app
     volumes:
-      - /home/leo/Admin/Adminka:/app/db
-    restart: always
+      # Монтируем папку проекта, где лежит db.sqlite3
+      - /home/leo/Admin/Adminka:/app  # Путь к вашему Django-проекту
+      - media_volume:/app/media  # Путь к медиа-файлам в контейнере
     ports:
       - "9090:8000"
+    restart: always
 volumes:
-  django_db:
+  media_volume:  # Объявляем том
