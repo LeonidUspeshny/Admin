@@ -1,4 +1,3 @@
-version: '3.8'
 
 services:
   app:
@@ -8,3 +7,6 @@ services:
       - my_photos_volume:/app/media
     ports:
       - "9090:8000"  # Пример порта, измените по необходимости
+
+volumes:
+  my_photos_volume:
