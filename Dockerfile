@@ -6,7 +6,7 @@ RUN pip install --upgrade pip
 WORKDIR /app
 # Установка пакетов для проекта
 RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+RUN pip install -r requirements
 COPY . .
 
 EXPOSE 8000
