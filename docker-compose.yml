@@ -1,12 +1,12 @@
+version: '3.8'
 
 services:
   app:
-    build: .
+    image: adminka-app
     volumes:
- # Монтируем локальную директорию в контейнер
-      - my_photos_volume:/app/media
+      - /home/leo/Admin/Adminka:/app/db
+    restart: always
     ports:
-      - "9090:8000"  # Пример порта, измените по необходимости
-
+      - "9090:8000"
 volumes:
-  my_photos_volume:
+  django_db:
