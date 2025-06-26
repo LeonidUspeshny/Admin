@@ -104,7 +104,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = 'Adminka/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'Adminka/static')
@@ -116,7 +116,7 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = os.path.join(BASE_DIR, '/media/')
-MEDIA_ROOT = '/media/'
+MEDIA_ROOT = '/Adminka/media/'
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 
