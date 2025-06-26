@@ -1,12 +1,11 @@
-FROM python:3.9.20-bullseye
-
+FROM python:3.10-slim
 # Устанавливаем обновления и необходимые модули
 
 # Обновление pip python
 RUN pip install --upgrade pip
 WORKDIR /app
 # Установка пакетов для проекта
-COPY requirements.txt ./
+RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 COPY . .
 
